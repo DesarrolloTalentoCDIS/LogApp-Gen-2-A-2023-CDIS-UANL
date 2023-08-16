@@ -18,7 +18,17 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  register(user : string, id: string, pass: string){
+  register(usname : string, id: string, pass: string){
     const URL = `${this.baseUrl}/auth/new`;
+    const body = {usname, id, pass};
+  }
+
+  login(id: string, pass: string){
+    const URL = `${this.baseUrl}/auth`;
+    const body = {id, pass};
+  }
+
+  validateToken(){
+    
   }
 }
